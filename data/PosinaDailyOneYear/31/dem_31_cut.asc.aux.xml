@@ -1,0 +1,20 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Histograms>
+      <HistItem>
+        <HistMin>556.52</HistMin>
+        <HistMax>581.48</HistMax>
+        <BucketCount>25</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|1|1|1|2|1|1|0|4|0|0|1|0|2|0|1|1|1|3|0|1|0|1|2</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">581</MDI>
+      <MDI key="STATISTICS_MEAN">569.32</MDI>
+      <MDI key="STATISTICS_MINIMUM">557</MDI>
+      <MDI key="STATISTICS_STDDEV">7.2206370910052</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

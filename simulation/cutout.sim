@@ -1,0 +1,56 @@
+import static oms3.SimBuilder.instance as OMS3
+def home = oms_prj
+def ID=42
+
+OMS3.sim {
+
+resource "$oms_prj/lib"
+
+ model() {
+   components {
+    
+    	//lettura del DEM
+        "reader_raster"            	  "org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
+       
+        "reader_mask"            	  "org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
+        // pitfiller
+        "cutout"						  "org.jgrasstools.gears.modules.r.cutout.OmsCutOut"
+        
+        // scrittura file ouput pitfiller
+        "writer_mapcut"            	  "org.jgrasstools.gears.io.rasterwriter.OmsRasterWriter"
+
+            
+         
+   }
+
+  
+   parameter{
+   
+   		// input file raster
+         "reader_raster.file"                      "${home}/data/Posina/sky_Ressi.asc"
+        
+        // input maschera bacino 
+        "reader_mask.file"                      "${home}/data/Posina/${ID}/rescaled_${ID}.asc"
+         
+         // ouput mappa ritagliata
+         "writer_mapcut.file"						"${home}/data/Posina/${ID}/sky_${ID}.asc"
+
+        
+   }
+    connect {
+        
+        // lettura file raster         					// input pitfiller
+        "reader_raster.outRaster"                 "cutout.inRaster"
+        
+        // lettura maschera bacino 
+        "reader_mask.outRaster"                 "cutout.inMask"
+       
+        //ouput mappa ritagliata						// scrittura ouput
+        "cutout.outRaster"						   "writer_mapcut.inRaster"
+
+   }
+
+ }
+}
+
+

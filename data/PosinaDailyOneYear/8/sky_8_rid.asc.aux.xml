@@ -1,0 +1,21 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <ColorInterp>Gray</ColorInterp>
+    <Histograms>
+      <HistItem>
+        <HistMin>0.8726830172144677</HistMin>
+        <HistMax>0.9080895495808814</HistMax>
+        <BucketCount>121</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|0|0|1|0|1|0|0|0|1|0|1|0|0|1|0|0|1|1|0|1|2|1|1|0|1|1|1|0|2|1|2|1|2|1|2|1|1|2|2|4|5|4|0|6|3|1|1|4|4|3|0|4|0|2|2|1|1|1|0|1|1|1|0|1|1|0|2|1|0|0|0|0|1|1|1|0|1|1|1|1|0|0|3|0|0|0|0|0|0|0|1|3|0|1|0|0|1|0|2|1|2|0|1|0|0|0|3|0|1|2|0|1|0|0|2|1|1|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">0.90794444084167</MDI>
+      <MDI key="STATISTICS_MEAN">0.88957607943164</MDI>
+      <MDI key="STATISTICS_MINIMUM">0.87282812595367</MDI>
+      <MDI key="STATISTICS_STDDEV">0.0085512422176414</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

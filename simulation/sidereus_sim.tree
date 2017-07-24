@@ -1,0 +1,14 @@
+import static oms3.SimBuilder.instance as OMS3
+
+
+OMS3.tree(name: "test") {
+	
+    model(classname:"ngmf.util.cosu.tree.model.Binary") {
+        parameter (file:"$oms_prj/data/PosinaDailyOneYear/mixed_params.csv") {
+            topology "$oms_prj/data/PosinaDailyOneYear/topoPosina.csv"
+        }
+
+    }
+
+    }
+
