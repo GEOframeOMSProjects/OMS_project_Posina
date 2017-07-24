@@ -1,7 +1,7 @@
 import static oms3.SimBuilder.instance as OMS3
 def home = oms_prj
-def startDate= "1997-01-01 00:00"
-def endDate= "1997-12-31 00:00"
+def startDate= "1994-01-01 00:00"
+def endDate= "1998-12-31 00:00"
 def ID=25
 
 OMS3.sim (name: "25") {
@@ -132,7 +132,7 @@ resource "$oms_prj/lib"
 	    "waterBudgetRZ.connectTOcanopy"		false
 	    "waterBudgetRZ.b_rz"				1.3
 	    "waterBudgetRZ.A"					2.03
-	    "waterBudgetRZ.IntialConditionStorage" 100 	
+	   // "waterBudgetRZ.IntialConditionStorage" 100 	
 	    "waterBudgetRZ.inTimestep"      60*24
 	  //   "reader_width.file" 				"${home}/data/PosinaDailyOneYear/${ID}/rescaled_${ID}.asc"
       //   "reader_topIndex.file" 			"${home}/data/PosinaDailyOneYear/${ID}/top_${ID}.asc"
@@ -154,8 +154,9 @@ resource "$oms_prj/lib"
 		"waterBudgetGW.b"					1.3
 		"waterBudgetGW.A"					2.03
 		"waterBudgetGW.timeStep"			60*24
-		"waterBudgetGW.IntialConditionStorage" 400
+		//"waterBudgetGW.IntialConditionStorage" 400
 		"waterBudgetGW.Smax" 				1000
+		
 		
    
         

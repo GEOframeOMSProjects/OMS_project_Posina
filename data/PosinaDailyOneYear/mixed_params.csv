@@ -4,29 +4,29 @@
  adjusted by,olaf
  modifed_at,Wed Jun 20 16:50:26 MDT 2012
 
-@P,combinedMeltingFactor,0.938416
+@P,combinedMeltingFactor,0.955102
 
-@P,freezingFactor,0.048033
+@P,freezingFactor,0.089217
 
-@P,radiationFactor,0.000028
+@P,radiationFactor,0.000061
 
-@P,alfa_l,0.394002
+@P,alfa_l,0.304315
 
-@P,kc_canopy_out,0.178343
+@P,kc_canopy_out,0.255155
 
-@P,s_RootZoneMax,188.546131
+@P,s_RootZoneMax,220.20789
 
-@P,Pmax,0.033527
+@P,Pmax,0.003004
 
-@P,b_rz,1.252028
+@P,b_rz,1.744739
 
-@P,pB,0.423166
+@P,pB,0.426687
 
-@P,a,132.976690
+@P,a,255.686365
 
-@P,b,8.519473
+@P,b,7.586287
 
-@P,Smax,581.146479
+@P,Smax,532.207478
 
 
 

@@ -1,7 +1,7 @@
 import static oms3.SimBuilder.instance as OMS3
 def home = oms_prj
-def startDate= "1997-01-01 00:00"
-def endDate= "1997-12-31 00:00"
+def startDate= "1994-01-01 00:00"
+def endDate= "1998-12-31 00:00"
 def ID=1
 
 OMS3.sim (name: "1") {
@@ -153,7 +153,7 @@ resource "$oms_prj/lib"
 	    "waterBudgetRZ.connectTOcanopy"		false
 	    "waterBudgetRZ.b_rz"				1
 	    "waterBudgetRZ.A"					3.79
-	    "waterBudgetRZ.IntialConditionStorage" 100
+	    //"waterBudgetRZ.IntialConditionStorage" 100
 	    "waterBudgetRZ.inTimestep"      60*24	
 	    
 	     //"reader_width.file" 				"${home}/data/PosinaDailyOneYear/${ID}/rescaled_${ID}.asc"
@@ -176,9 +176,8 @@ resource "$oms_prj/lib"
 		"waterBudgetGW.b"					3
 		"waterBudgetGW.A"					3.79
 		"waterBudgetGW.timeStep"			60*24
-		"waterBudgetGW.IntialConditionStorage" 400
-		"waterBudgetGW.Smax" 				1000
-		
+		//"waterBudgetGW.IntialConditionStorage" 400
+		"waterBudgetGW.Smax" 				1000		
 
 
 
@@ -216,10 +215,10 @@ resource "$oms_prj/lib"
         "writer_Qrz.tTimestep" 60*24
         "writer_Qrz.fileNovalue" "-9999"
         
-        //"writer_Qro.file" "${home}/output/Posina_daily/Qro_${ID}.csv"
-       // "writer_Qro.tStart" "${startDate}"
-       // "writer_Qro.tTimestep" 60*24
-       // "writer_Qro.fileNovalue" "-9999"
+        "writer_Qro.file" "${home}/output/Posina_daily/Qro_${ID}.csv"
+        "writer_Qro.tStart" "${startDate}"
+        "writer_Qro.tTimestep" 60*24
+        "writer_Qro.fileNovalue" "-9999"
         
         
         "writer_Sgw.file" "${home}/output/Posina_daily/Sgw_${ID}.csv"
@@ -325,6 +324,10 @@ resource "$oms_prj/lib"
 
          
          "waterBudgetRZ.outHMR" 						"writer_Qrz.inData"
+         
+         "waterBudgetRZ.outHMquick" 						"writer_Qro.inData"
+         
+         
         "waterBudgetCanopyOUT.outHMThroughfall" 		"writer_Throughfall.inData"
          "waterBudgetCanopyOUT.outHMActualOutput" 		"writer_Qc.inData"
          
