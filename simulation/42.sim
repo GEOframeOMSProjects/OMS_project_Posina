@@ -25,7 +25,6 @@ resource "$oms_prj/lib"
         "vreader_station"                      "org.jgrasstools.gears.io.shapefile.OmsShapefileFeatureReader"
         
         "waterBudgetRZ"              "rootZone.WaterBudgetRootZone" 
-        "waterBudgetCanopyIN"            "canopyIN.WaterBudgetCanopyIN" 
         "waterBudgetCanopyOUT"            "canopyOUT.WaterBudgetCanopyOUT" 
         
                  
@@ -36,38 +35,13 @@ resource "$oms_prj/lib"
         "waterBudgetGW"              "groundWater.WaterBudgetGroundWater"
         
         "sum"					"sumSeries.SumSeries"
-        "s"						"sumSeries.SumNodes"
-        "to"					"it.blogspot.geoframe.treeUtils.TreeOut"
+        "outNode1"              "ex0.Out1"
+        //"s"						"sumSeries.SumNodes"
+        //"to"					"it.blogspot.geoframe.treeUtils.TreeOut"
         
-		"writer_Melting"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		
-		"writer_InputCanopyOut"		"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_InputRoot"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_InputRO"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-
-		
-		"writer_Qgw"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_Qgw_mm"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-
-		"writer_Qc"			   "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_Throughfall"   "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_Qrz"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
+        "writer_Qgw"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
 		"writer_Qro"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-        
-		"writer_Sgw"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-
-		"writer_Srz"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_Sro"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_Sc"			    "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_Sc_in"			    "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		
-		"writer_ETc"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_ETc_in"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-
-		"writer_ETrz"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		"writer_ETro"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
-		
-		"writer_uptake"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
+		"writer_Qtot" 			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
         
    }
 
@@ -111,10 +85,10 @@ resource "$oms_prj/lib"
           "snow.fStationsid"                     "netnum"
          "snow.model"                           "Hock"
           "snow.tStartDate"                      "${startDate}"
-        "snow.combinedMeltingFactor"         0.596265
-       "snow.freezingFactor"                0.083070
-        "snow.alfa_l"                        0.329205
-        "snow.radiationFactor"               0.000060
+        "snow.combinedMeltingFactor"          	 0.955102
+       "snow.freezingFactor"                 	 0.089217
+        "snow.alfa_l"                         	 0.304315
+        "snow.radiationFactor"                	 0.000061
         "snow.meltingTemperature"            1.94
         
 
@@ -141,7 +115,7 @@ resource "$oms_prj/lib"
 	    //"waterBudgetCanopyIN.kc_canopy_in"	  	 0.045
 	    
 	    "waterBudgetCanopyOUT.solver_model"  	 "dp853"
-	     "waterBudgetCanopyOUT.kc_canopy_out"	  0.005
+	     "waterBudgetCanopyOUT.kc_canopy_out" 	 0.255155
 	     "waterBudgetCanopyOUT.p"	  			  0.65
 	     "waterBudgetCanopyOUT.IntialConditionStorage" 1 
 
@@ -150,13 +124,13 @@ resource "$oms_prj/lib"
 		"waterBudgetRZ.solver_model"		"dp853"
 		"waterBudgetRZ.a_uptake"			0.0
 		"waterBudgetRZ.b_uptake"			1
-		"waterBudgetRZ.s_RootZoneMax"       250
-	    "waterBudgetRZ.pB"					1
-	    "waterBudgetRZ.Pmax"				0.2
+		"waterBudgetRZ.s_RootZoneMax"        	 220.20789
+	    "waterBudgetRZ.pB" 	 0.426687
+	    "waterBudgetRZ.Pmax" 	 0.003004
 	    "waterBudgetRZ.connectTOcanopy"		false
-	    "waterBudgetRZ.b_rz"				1.3
+	    "waterBudgetRZ.b_rz" 	 1.744739
 	    "waterBudgetRZ.A"					2.66
-	  //  "waterBudgetRZ.IntialConditionStorage" 100 
+	   // "waterBudgetRZ.IntialConditionStorage" 100 
 	    "waterBudgetRZ.inTimestep"      60*24	
 	    
 	  //   "reader_width.file" 				"${home}/data/PosinaDailyOneYear/${ID}/rescaled_${ID}.asc"
@@ -175,44 +149,16 @@ resource "$oms_prj/lib"
 		
 		
 	    "waterBudgetGW.solver_model"		"dp853"
-		"waterBudgetGW.a"					1
-		"waterBudgetGW.b"					1.3
+		"waterBudgetGW.a" 	 255.686365
+		"waterBudgetGW.b" 	 7.586287
 		"waterBudgetGW.A"					2.66
 		"waterBudgetGW.timeStep"			60*24
-	//	"waterBudgetGW.IntialConditionStorage" 400
-		"waterBudgetGW.Smax" 				1000
+		//"waterBudgetGW.IntialConditionStorage" 400
+		"waterBudgetGW.Smax"  	 532.207478
 		
 		
-		        
-        "writer_Qc.file" "${home}/output/Posina_daily/Qc_${ID}.csv"
-        "writer_Qc.tStart" "${startDate}"
-        "writer_Qc.tTimestep" 60*24
-        "writer_Qc.fileNovalue" "-9999"
-        
-                "writer_Throughfall.file" "${home}/output/Posina_daily/Throughfall_${ID}.csv"
-        "writer_Throughfall.tStart" "${startDate}"
-        "writer_Throughfall.tTimestep" 60*24
-        "writer_Throughfall.fileNovalue" "-9999"
-        
-                "writer_Sc.file" "${home}/output/Posina_daily/Sc_${ID}.csv"
-        "writer_Sc.tStart" "${startDate}"
-        "writer_Sc.tTimestep" 60*24
-        "writer_Sc.fileNovalue" "-9999"
+		
    
-           "writer_ETc.file" "${home}/output/Posina_daily/ETc_${ID}.csv"
-        "writer_ETc.tStart" "${startDate}"
-        "writer_ETc.tTimestep" 60*24
-        "writer_ETc.fileNovalue" "-9999"
-        
-        "writer_InputCanopyOut.file" "${home}/output/Posina_daily/InputCanopyOut_${ID}.csv"
-		"writer_InputCanopyOut.tStart" "${startDate}"
-        "writer_InputCanopyOut.tTimestep" 60*24
-        "writer_InputCanopyOut.fileNovalue" "-9999"
-        
-        "writer_Melting.file"		"${home}/output/Posina_daily/Melting_${ID}.csv"
-		"writer_Melting.tStart" "${startDate}"
-         "writer_Melting.tTimestep" 60*24
-        "writer_Melting.fileNovalue" "-9999"
         
    }
  connect {
@@ -250,26 +196,17 @@ resource "$oms_prj/lib"
         
         "waterBudgetRZ.outHMquick"		"sum.inHMDischarge"            
         "waterBudgetGW.outHMDischarge"             "sum.inHMDischarge2"
-        
-              "waterBudgetCanopyOUT.outHMActualInput"        "writer_InputCanopyOut.inData"
-              "waterBudgetCanopyOUT.outHMAET" 			 "writer_ETc.inData"
-             "waterBudgetCanopyOUT.outHMStorage" 			"writer_Sc.inData"
-             
-            "waterBudgetCanopyOUT.outHMThroughfall" 		"writer_Throughfall.inData"
-         "waterBudgetCanopyOUT.outHMActualOutput" 		"writer_Qc.inData"
-          "snow.outMeltingDischargeHM" 				    "writer_Melting.inData"
 
         
         
         // somma spaziale
-        "sum.outHMQtot"						 "to.in"
-        
-
+        //"sum.outHMQtot"						 "to.in"
+        "sum.outHMQtot"						 "outNode1.inval"
 
    }
+
+ outFluxes {
+    "outNode1.outval1" ""
  }
 }
-
-
-
-
+}

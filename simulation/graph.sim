@@ -1,0 +1,57 @@
+import static oms3.SimBuilder.instance as OMS3
+
+/*
+ * Luca calibration.
+ */
+OMS3.luca(name: "EFC-luca_newInformatics_norunoff_range_NS",
+		  path: "$oms_prj/data/PosinaDailyOneYear/topoPosina.csv") {
+	
+	graph(traverser: "downstream.all"){
+		
+		parameter(file: "$oms_prj/data/PosinaDailyOneYear/mixed_params.csv") {
+		}
+		
+	}
+
+    run_start          "1997-01-01"
+    calibration_start  "1997-01-01"
+    run_end            "1997-12-31"
+    rounds            1                    // calibration rounds, default 1
+
+    // step definitions
+    step {                     
+        parameter {
+                
+                
+        		combinedMeltingFactor  (lower:0.01, upper:1.0,calib_strategy:MEAN) 
+                freezingFactor         (lower:0.0001, upper:0.1,calib_strategy:MEAN)
+                radiationFactor        (lower:1.0E-5, upper:1.0E-4,calib_strategy:MEAN)  
+                alfa_l                 (lower:0.3, upper:0.9,calib_strategy:MEAN)
+                
+                //kc_canopy_in				 (lower:0.00000001, upper:0.0001,calib_strategy:MEAN) 
+                kc_canopy_out				 (lower:0.1, upper:0.3,calib_strategy:MEAN)
+                //a_uptake 					 (lower:0.00000001, upper:1.0,calib_strategy:MEAN)
+                
+                s_RootZoneMax       		 (lower:110, upper:200,calib_strategy:MEAN)
+	    		Pmax						 (lower:0.00000001, upper:0.1,calib_strategy:MEAN)
+	    		b_rz						 (lower:1.0, upper:2,calib_strategy:MEAN)
+	            pB						 	 (lower:0.01, upper:1.0,calib_strategy:MEAN)
+	            //pCmax          				 (lower:1, upper:400.0,calib_strategy:MEAN) 
+	            //s_RunoffMax     			 (lower:0.00000001, upper:3,calib_strategy:MEAN)
+	            //pSat						 (lower:20.0, upper:80,calib_strategy:MEAN)
+	            a							 (lower:100, upper:600,calib_strategy:MEAN)
+	            b							 (lower:1, upper:10,calib_strategy:MEAN)
+	            Smax						 (lower:500, upper:600,calib_strategy:MEAN)
+
+	            
+        }
+    
+        objfunc(method:NS, timestep:RAW,invalidDataValue:-9999) {
+            sim(file:"$oms_prj/output/Posina_daily/Qtot_runoff.csv", table:"table", column:"value_8")
+            obs(file:"$oms_prj/data/PosinaDailyOneYear/Q_202_1997_daily.csv", table:"table", column:"value_202")
+        }
+        max_exec 200
+    }
+
+
+}

@@ -1,0 +1,36 @@
+@S,Parameter
+ created by,george
+ created at,Thu Jun 25 13:44:42 MDT 2009
+ adjusted by,olaf
+ modifed_at,Wed Jun 20 16:50:26 MDT 2012
+
+@P,snow.combinedMeltingFactor,0.955102
+
+@P,snow.freezingFactor,0.089217
+
+@P,snow.radiationFactor,0.000061
+
+@P,snow.alfa_l,0.304315
+
+@P,waterBudgetCanopyOUT.kc_canopy_out,0.255155
+
+@P,waterBudgetRZ.s_RootZoneMax,220.20789
+
+@P,waterBudgetRZ.Pmax,0.003004
+
+@P,waterBudgetRZ.b_rz,1.744739
+
+@P,waterBudgetRZ.pB,0.426687
+
+@P,waterBudgetGW.a,255.686365
+
+@P,waterBudgetGW.b,7.586287
+
+@P,waterBudgetGW.Smax,532.207478
+
+
+
+
+
+            	
+

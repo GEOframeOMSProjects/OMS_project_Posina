@@ -25,7 +25,6 @@ resource "$oms_prj/lib"
         "vreader_station"                      "org.jgrasstools.gears.io.shapefile.OmsShapefileFeatureReader"
         
         "waterBudgetRZ"              "rootZone.WaterBudgetRootZone" 
-        "waterBudgetCanopyIN"            "canopyIN.WaterBudgetCanopyIN"
         "waterBudgetCanopyOUT"            "canopyOUT.WaterBudgetCanopyOUT"
         "waterBudgetRunoff"		     	     "runoff.WaterBudgetRunoff"
   
@@ -36,8 +35,9 @@ resource "$oms_prj/lib"
         "waterBudgetGW"              "groundWater.WaterBudgetGroundWater"
         
         "sum"					"sumSeries.SumSeries"
-        "s"						"sumSeries.SumNodes"
-        "to"					"it.blogspot.geoframe.treeUtils.TreeOut"
+        "outNode1"              "ex0.Out1"
+        //"s"						"sumSeries.SumNodes"
+        //"to"					"it.blogspot.geoframe.treeUtils.TreeOut"
         
         
 		"writer_Melting"			"org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter"
@@ -111,10 +111,10 @@ resource "$oms_prj/lib"
          "snow.fStationsid"                     "netnum"
          "snow.model"                           "Hock"
          "snow.tStartDate"                      "${startDate}"
-         "snow.combinedMeltingFactor"         0.355969
-         "snow.freezingFactor"                0.068136
-         "snow.alfa_l"                        0.449765
-         "snow.radiationFactor"               0.000054
+         "snow.combinedMeltingFactor"          	 0.955102
+         "snow.freezingFactor"                 	 0.089217
+         "snow.alfa_l"                         	 0.304315
+         "snow.radiationFactor"                	 0.000061
          "snow.meltingTemperature"            1.94
         
  
@@ -138,7 +138,7 @@ resource "$oms_prj/lib"
 	    //"waterBudgetCanopyIN.kc_canopy_in"	  	 0.045
 	    
 	    "waterBudgetCanopyOUT.solver_model"  	 "dp853"
-	     "waterBudgetCanopyOUT.kc_canopy_out"	  0.3
+	     "waterBudgetCanopyOUT.kc_canopy_out" 	 0.255155
 	     "waterBudgetCanopyOUT.p"	  			  0.65
 	     "waterBudgetCanopyOUT.IntialConditionStorage" 1 
 
@@ -147,11 +147,11 @@ resource "$oms_prj/lib"
 		"waterBudgetRZ.solver_model"		"dp853"
 		"waterBudgetRZ.a_uptake"			0.0
 		"waterBudgetRZ.b_uptake"			1
-		"waterBudgetRZ.s_RootZoneMax"       101
-	    "waterBudgetRZ.pB"					1
-	    "waterBudgetRZ.Pmax"				0.042
+		"waterBudgetRZ.s_RootZoneMax"        	 220.20789
+	    "waterBudgetRZ.pB" 	 0.426687
+	    "waterBudgetRZ.Pmax" 	 0.003004
 	    "waterBudgetRZ.connectTOcanopy"		false
-	    "waterBudgetRZ.b_rz"				1
+	    "waterBudgetRZ.b_rz" 	 1.744739
 	    "waterBudgetRZ.A"					3.79
 	    //"waterBudgetRZ.IntialConditionStorage" 100
 	    "waterBudgetRZ.inTimestep"      60*24	
@@ -172,12 +172,13 @@ resource "$oms_prj/lib"
 		
 		
 	    "waterBudgetGW.solver_model"		"dp853"
-		"waterBudgetGW.a"					3
-		"waterBudgetGW.b"					3
+		"waterBudgetGW.a" 	 255.686365
+		"waterBudgetGW.b" 	 7.586287
 		"waterBudgetGW.A"					3.79
 		"waterBudgetGW.timeStep"			60*24
 		//"waterBudgetGW.IntialConditionStorage" 400
-		"waterBudgetGW.Smax" 				1000		
+		"waterBudgetGW.Smax"  	 532.207478
+		
 
 
 
@@ -215,10 +216,10 @@ resource "$oms_prj/lib"
         "writer_Qrz.tTimestep" 60*24
         "writer_Qrz.fileNovalue" "-9999"
         
-        "writer_Qro.file" "${home}/output/Posina_daily/Qro_${ID}.csv"
-        "writer_Qro.tStart" "${startDate}"
-        "writer_Qro.tTimestep" 60*24
-        "writer_Qro.fileNovalue" "-9999"
+        //"writer_Qro.file" "${home}/output/Posina_daily/Qro_${ID}.csv"
+       // "writer_Qro.tStart" "${startDate}"
+       // "writer_Qro.tTimestep" 60*24
+       // "writer_Qro.fileNovalue" "-9999"
         
         
         "writer_Sgw.file" "${home}/output/Posina_daily/Sgw_${ID}.csv"
@@ -324,10 +325,6 @@ resource "$oms_prj/lib"
 
          
          "waterBudgetRZ.outHMR" 						"writer_Qrz.inData"
-         
-         "waterBudgetRZ.outHMquick" 						"writer_Qro.inData"
-         
-         
         "waterBudgetCanopyOUT.outHMThroughfall" 		"writer_Throughfall.inData"
          "waterBudgetCanopyOUT.outHMActualOutput" 		"writer_Qc.inData"
          
@@ -356,10 +353,14 @@ resource "$oms_prj/lib"
         
         
         // somma spaziale
-        "sum.outHMQtot"						 "to.in"
-        
+        //"sum.outHMQtot"						 "to.in"
+        "sum.outHMQtot"						 "outNode1.inval"
 
    }
+
+ outFluxes {
+    "outNode1.outval1" ""
+ }
  }
 }
 
