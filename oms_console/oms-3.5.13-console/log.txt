@@ -1,0 +1,32 @@
+Jul 31, 2017 3:42:19 PM ngmfconsole.Main <clinit>
+INFO: Start Session
+Jul 31, 2017 3:42:19 PM ngmfconsole.Main main
+INFO: Log level: INFO
+Jul 31, 2017 3:42:19 PM ngmfconsole.Main main
+INFO: OMS version 3.5.13
+Jul 31, 2017 3:42:20 PM ngmfconsole.Main main
+INFO: OMS home: /Users/marialaura/.oms/3.5.13
+Jul 31, 2017 3:42:20 PM ngmfconsole.Main main
+INFO: User dir: /Users/marialaura/Dropbox/OMS_project_Posina/oms_console/oms-3.5.13-console
+Jul 31, 2017 3:42:20 PM ngmfconsole.Main main
+INFO: java.home: /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+Jul 31, 2017 3:42:20 PM ngmfconsole.Main$1 run
+INFO: staring console.
+Jul 31, 2017 3:42:24 PM ngmfconsole.Console setupComponents
+INFO: setup components.
+Jul 31, 2017 3:42:24 PM ngmfconsole.Console setupComponents
+INFO: setup options toolbar.
+Jul 31, 2017 3:42:24 PM ngmfconsole.Console setupComponents
+INFO: setup dialog boxes.
+Jul 31, 2017 3:42:25 PM ngmfconsole.Console setupComponents
+INFO: setup preferences.
+Jul 31, 2017 3:42:25 PM ngmfconsole.Console setupComponents
+INFO: setup work combo.
+Jul 31, 2017 3:42:25 PM ngmfconsole.Console setupComponents
+INFO: setup tabs.
+Jul 31, 2017 3:42:25 PM ngmfconsole.Console setupComponents
+INFO: setup install.
+Jul 31, 2017 3:42:25 PM ngmfconsole.Console setupComponents
+INFO: Done console init.
+Jul 31, 2017 3:43:06 PM oms3.util.ProcessExecution exec
+INFO: [/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/bin/java, -Doms3.work=/Users/marialaura/Dropbox/OMS_project_Posina, -Doms.csip=false, -cp, /Users/marialaura/.oms/3.5.13/cpptasks-1.0b6-od.jar:/Users/marialaura/.oms/3.5.13/groovy-all-2.3.9.jar:/Users/marialaura/.oms/3.5.13/jcommon-1.0.15.jar:/Users/marialaura/.oms/3.5.13/jfreechart-1.0.12.jar:/Users/marialaura/.oms/3.5.13/oms-all.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/CI.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/dataFormatter.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/ETP.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/GEOframeUtils-0.2.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/jai_imageio-1.1.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/jgt-grass-0.7.7-SNAPSHOT.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/jgt-hortonmachine-0.7.7-SNAPSHOT.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/jgt-jgrassgears-0.7.7-SNAPSHOT-jar-with-dependencies.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/jgt-modules-0.7.7-SNAPSHOT.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/jgt-oms3-0.7.7-SNAPSHOT.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/KRIGING.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/LWRB.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/NETRAD.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/oms-all.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/prms.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/RAINSNOW.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/SNOW.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/SWRB.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/TT.jar:/Users/marialaura/Dropbox/OMS_project_Posina/lib/WATER_BUDGET-na.jar:/Users/marialaura/Dropbox/OMS_project_Posina/dist/Resevoirs.jar, oms3.CLI, -l, OFF, -r, /Users/marialaura/Dropbox/OMS_project_Posina/simulation/Hello.sim]
