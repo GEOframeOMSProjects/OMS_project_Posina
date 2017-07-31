@@ -124,12 +124,12 @@ resource "$oms_prj/lib"
         
 
 		"waterBudgetRZ.solver_model"		"dp853"
-		"waterBudgetRZ.a_uptake"			0.0
-		"waterBudgetRZ.b_uptake"			1
-		"waterBudgetRZ.s_RootZoneMax"        	 220.20789
-	    "waterBudgetRZ.pB" 	 0.426687
-	    "waterBudgetRZ.Pmax" 	 0.003004
-	    "waterBudgetRZ.connectTOcanopy"		false
+		//"waterBudgetRZ.a_uptake"			0.0
+		//"waterBudgetRZ.b_uptake"			1
+		"waterBudgetRZ.s_RootZoneMax"       250
+	    "waterBudgetRZ.pB"					1
+	    "waterBudgetRZ.Pmax"				0.2
+	   // "waterBudgetRZ.connectTOcanopy"		false
 	    "waterBudgetRZ.b_rz" 	 1.744739
 	    "waterBudgetRZ.A"					3.67
 	   // "waterBudgetRZ.IntialConditionStorage" 100 	
