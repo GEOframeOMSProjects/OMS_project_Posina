@@ -50,32 +50,32 @@ resource "$oms_prj/lib"
    parameter{
    
    
-           "reader_data_rain.file"             "${home}/data/PosinaDailyOneYear/${ID}/rain_${ID}_daily.csv"  
+           "reader_data_rain.file"             "${home}/data/PosinaDailyOneYear/${ID}/rain_${ID}.csv"  
         "reader_data_rain.idfield"          "ID"  
         "reader_data_rain.tStart"           "${startDate}"
         "reader_data_rain.tEnd"             "${endDate}"
-        "reader_data_rain.tTimestep"          60*24
+        "reader_data_rain.tTimestep"          60
         "reader_data_rain.fileNovalue"      "-9999"
         
-        "reader_data_snow.file"             "${home}/data/PosinaDailyOneYear/${ID}/snow_${ID}_daily.csv" 
+        "reader_data_snow.file"             "${home}/data/PosinaDailyOneYear/${ID}/snow_${ID}.csv" 
         "reader_data_snow.idfield"          "ID"  
          "reader_data_snow.tStart"           "${startDate}"
         "reader_data_snow.tEnd"             "${endDate}"
-         "reader_data_snow.tTimestep"          60*24
+         "reader_data_snow.tTimestep"          60
          "reader_data_snow.fileNovalue"      "-9999"
         
-         "reader_data_SWRB.file"             "${home}/data/PosinaDailyOneYear/${ID}/total_${ID}_daily.csv"
+         "reader_data_SWRB.file"             "${home}/data/PosinaDailyOneYear/${ID}/total_${ID}.csv"
          "reader_data_SWRB.idfield"          "ID"  
          "reader_data_SWRB.tStart"           "${startDate}"
          "reader_data_SWRB.tEnd"             "${endDate}"
-         "reader_data_SWRB.tTimestep"         60*24
+         "reader_data_SWRB.tTimestep"         60
          "reader_data_SWRB.fileNovalue"      "-9999"
         
-	     "reader_data_temp.file"             "${home}/data/PosinaDailyOneYear/${ID}/airT_${ID}_daily.csv"
+	     "reader_data_temp.file"             "${home}/data/PosinaDailyOneYear/${ID}/airT_${ID}.csv"
         "reader_data_temp.idfield"          "ID"  
         "reader_data_temp.tStart"           "${startDate}"
          "reader_data_temp.tEnd"             "${endDate}"
-         "reader_data_temp.tTimestep"         60*24
+         "reader_data_temp.tTimestep"         60
          "reader_data_temp.fileNovalue"      "-9999"
 
         "reader_dem.file"                      "${home}/data/PosinaDailyOneYear/${ID}/dem_${ID}.asc"
@@ -96,19 +96,19 @@ resource "$oms_prj/lib"
 
 
         
-        "reader_data_ET.file"            	"${home}/data/PosinaDailyOneYear/${ID}/etp_${ID}_daily.csv"
+        "reader_data_ET.file"            	"${home}/data/PosinaDailyOneYear/${ID}/etp_${ID}.csv"
         "reader_data_ET.idfield"          	"ID"  
         "reader_data_ET.tStart"           	"${startDate}"
         "reader_data_ET.tEnd"             	"${endDate}"
-        "reader_data_ET.tTimestep"          60*24
+        "reader_data_ET.tTimestep"          60
         "reader_data_ET.fileNovalue"       	"-9999"
         
         
-        "reader_data_LAI.file"            	"${home}/data/PosinaDailyOneYear/${ID}/LAI_${ID}_daily.csv"
+        "reader_data_LAI.file"            	"${home}/data/PosinaDailyOneYear/${ID}/LAI_${ID}.csv"
         "reader_data_LAI.idfield"           "ID"  
         "reader_data_LAI.tStart"            "${startDate}"
         "reader_data_LAI.tEnd"              "${endDate}"
-        "reader_data_LAI.tTimestep"          60*24
+        "reader_data_LAI.tTimestep"          60
         "reader_data_LAI.fileNovalue"       "-9999"
         
         
@@ -132,18 +132,19 @@ resource "$oms_prj/lib"
 	    "waterBudgetRZ.b_rz" 	 1.744739
 	    "waterBudgetRZ.A"					5.53
 	   // "waterBudgetRZ.IntialConditionStorage" 100 	
-	    "waterBudgetRZ.inTimestep"      60*24
-	  //   "reader_width.file" 				"${home}/data/PosinaDailyOneYear/${ID}/rescaled_${ID}.asc"
-      //   "reader_topIndex.file" 			"${home}/data/PosinaDailyOneYear/${ID}/top_${ID}.asc"
+	    "waterBudgetRZ.inTimestep"      60
+	  
+	  
+	  
+	     "reader_width.file" 				"${home}/data/PosinaDailyOneYear/${ID}/rescaled_${ID}.asc"
+         "reader_topIndex.file" 			"${home}/data/PosinaDailyOneYear/${ID}/top_${ID}.asc"
 	    
 	    
 
-	//	"waterBudgetRunoff.pCelerity"		 2		
-	//	"waterBudgetRunoff.pSat"      		 20.151293		
-	//	"waterBudgetRunoff.inTimestep"      60*24	
-	//	"waterBudgetRunoff.tStartDate"     "${startDate}"
-	//    "waterBudgetRunoff.tEndDate"	   "${endDate}"
-	//	"waterBudgetRunoff.ID"             "${ID}"
+		"waterBudgetRunoff.pCelerity"		 2		
+		"waterBudgetRunoff.pSat"      		 20.151293		
+		"waterBudgetRunoff.inTimestep"      60	
+		"waterBudgetRunoff.ID"             "${ID}"
 
 	
 		
@@ -152,7 +153,7 @@ resource "$oms_prj/lib"
 		"waterBudgetGW.a" 	 255.686365
 		"waterBudgetGW.b" 	 7.586287
 		"waterBudgetGW.A"					5.53
-		"waterBudgetGW.timeStep"			60*24
+		"waterBudgetGW.timeStep"			60
 		//"waterBudgetGW.IntialConditionStorage" 400
 		"waterBudgetGW.Smax"  	 532.207478
 		
@@ -189,16 +190,16 @@ resource "$oms_prj/lib"
         "reader_data_ET.outData"           				 "waterBudgetRZ.inHMETp"
        "waterBudgetCanopyOUT.outHMAET"            				"waterBudgetRZ.inHMEwc"
         
-       // "waterBudgetRZ.outHMRootUpTake"     			 "waterBudgetCanopyIN.inHMRootUpTake"
-       // "reader_data_ET.outData"           				 "waterBudgetCanopyIN.inHMETp"
-       // "reader_data_LAI.outData"			 			 "waterBudgetCanopyIN.inHMLAI"
-        
+        "waterBudgetCanopyOUT.outHMThroughfall"         "waterBudgetRunoff.inRainValues"      
+        "reader_width.outRaster"                 		"waterBudgetRunoff.inRescaledDistance"
+        "reader_topIndex.outRaster" 					"waterBudgetRunoff.inTopindex"    
+        "waterBudgetRZ.alpha"						    "waterBudgetRunoff.alpha" 
         
   		
      
          "waterBudgetRZ.outHMR"			"waterBudgetGW.inHMRechargeValues"
         
-        "waterBudgetRZ.outHMquick"			"sum.inHMDischarge"            
+        "waterBudgetRunoff.outHMDischarge"			"sum.inHMDischarge"              
         "waterBudgetGW.outHMDischarge"             "sum.inHMDischarge2"
 
         
