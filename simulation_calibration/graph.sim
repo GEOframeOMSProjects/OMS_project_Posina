@@ -13,9 +13,9 @@ OMS3.luca(name: "EFC-luca_newInformatics_norunoff_range_NS",
 		
 	}
 
-    run_start          "1995-01-01"
-    calibration_start  "1995-01-01"
-    run_end            "1996-12-31"
+    run_start          "1997-01-01"
+    calibration_start  "1997-01-01"
+    run_end            "1997-12-31"
     rounds            1                    // calibration rounds, default 1
 
     // step definitions
