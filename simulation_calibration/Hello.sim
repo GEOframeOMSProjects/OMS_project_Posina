@@ -1,0 +1,33 @@
+/*
+ * Hello 'world' example.
+ *   A component printing a greeting.
+ */
+import static oms3.SimBuilder.instance as OMS3
+
+OMS3.graph(path: "$oms_prj/data/PosinaDailyOneYear/topoPosina.csv") {
+
+    build()
+    
+    graph(traverser: "downstream.all") {
+    	
+        components {
+        }
+        
+		parameter(file: "$oms_prj/data/PosinaDailyOneYear/mixed_params.csv") {
+		//parameter {
+		//	"combinedMeltingFactor" 0.955102
+		//	"freezingFactor" 0.089217
+		//	"radiationFactor" 0.000061
+		//	"alfa_l" 0.304315
+		//	"kc_canopy_out" 0.255155
+		//	"s_RootZoneMax" 220.20789
+		//	"Pmax" 0.003004
+		//	"b_rz" 1.744739
+		//	"pB" 0.426687
+		//	"a" 255.686365
+		//	"b" 7.586287
+		//	"Smax" 532.207478
+		}
+    }
+    
+}

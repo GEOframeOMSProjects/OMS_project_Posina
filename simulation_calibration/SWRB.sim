@@ -1,0 +1,87 @@
+import static oms3.SimBuilder.instance as OMS3
+def home = oms_prj
+// start and end date of the simulation
+
+def startDate= "1997-01-01 00:00"
+def endDate="1997-01-31 00:00"
+def ID=1
+
+OMS3.sim {
+
+resource "$oms_prj/lib"
+
+ model(while : "reader_data_airT.doProcess"  ) {
+   components {
+    
+        // components to be called: reader input data, lwrb and writer output data
+        "reader_data_airT"            "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorReader"
+        "reader_dem"                  "org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
+        "reader_sky"                  "org.jgrasstools.gears.io.rasterreader.OmsRasterReader"
+        "vreader_station"             "org.jgrasstools.gears.io.shapefile.OmsShapefileFeatureReader"
+        "swrb"                        "swrbPointCase.ShortwaveRadiationBalancePointCase"
+        "writer_direct"               "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
+        "writer_total"              "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
+        "writer_topATM"               "org.jgrasstools.gears.io.timedependent.OmsTimeSeriesIteratorWriter" 
+            
+         
+   }
+
+  
+   parameter{
+   
+        // parameter of the reader components 
+        "reader_data_airT.file"             "${home}/data/PosinaDailyOneYear/${ID}/airT_${ID}_year.csv"
+        "reader_data_airT.idfield"          "ID"  
+        "reader_data_airT.tStart"           "${startDate}"
+        "reader_data_airT.tEnd"             "${endDate}"
+        "reader_data_airT.tTimestep"          60*24
+        "reader_data_airT.fileNovalue"      "-9999"
+        
+        
+        
+        "reader_dem.file"                      "${home}/data/Posina/${ID}/dem_${ID}.asc"
+         "reader_sky.file"                      "${home}/data/Posina/${ID}/sky_${ID}.asc"
+         "vreader_station.file"                 "${home}/data/Posina/${ID}/centroids_netnum_${ID}.shp"
+        
+        
+        "swrb.fStationsid"                      "netnum" 
+        "swrb.tStartDate"                       "${startDate}"   
+        "swrb.doHourly"                         true
+        "swrb.pCmO3"                            0.9
+        "swrb.pAlphag"                          0.6
+        "swrb.pVisibility"                      80
+            
+        // parameter of the writing component    
+        //"writer_direct.file"                   "${home}/data/Posina/${ID}/diretta_${ID}.csv" 
+        //"writer_direct.tStart"                 "${startDate}"
+        //"writer_direct.fileNovalue" 		   "-9999"
+        //"writer_direct.tTimestep"              60
+        
+        
+                // parameter of the writing component    
+        "writer_total.file"                   "${home}/data/PosinaDailyOneYear/${ID}/total_${ID}_prova.csv" 
+        "writer_total.tStart"                 "${startDate}"
+        "writer_total.fileNovalue" 		   "-9999"
+        "writer_total.tTimestep"              60*24
+        
+
+   }
+    connect {
+        
+         
+        "reader_data_airT.outData"             "swrb.inTemperatureValues"
+       
+        "reader_dem.outRaster"                 "swrb.inDem"    
+        "reader_sky.outRaster"                 "swrb.inSkyview"          
+        "vreader_station.geodata"              "swrb.inStations"
+
+        //"swrb.outHMdirect"                     "writer_direct.inData"
+        
+        "swrb.outHMtotal"                     "writer_total.inData"
+
+   }
+
+ }
+}
+
+
